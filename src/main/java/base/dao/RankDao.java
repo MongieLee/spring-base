@@ -1,5 +1,6 @@
 package base.dao;
 
+import base.anno.Cache;
 import base.entity.RankItem;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ public class RankDao {
     public RankDao(SqlSession sqlSession) {
         this.sqlSession = sqlSession;
     }
+
 
     public List<RankItem> getRank(){
         return sqlSession.selectList("MserMapper.getRank");

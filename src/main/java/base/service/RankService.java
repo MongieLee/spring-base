@@ -1,5 +1,6 @@
 package base.service;
 
+import base.anno.Cache;
 import base.dao.RankDao;
 import base.dao.UserMapper;
 import base.entity.RankItem;
@@ -16,6 +17,7 @@ public class RankService {
         this.rankDao = rankDao;
     }
 
+    @Cache
     public  List<RankItem> getRank() {
         return rankDao.getRank();
     }

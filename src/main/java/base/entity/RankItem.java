@@ -3,7 +3,7 @@ package base.entity;
 
 public class RankItem {
     private Integer score;
-    private User user;
+    private TestUser user;
 
     public int getScore() {
         return score;
@@ -13,11 +13,11 @@ public class RankItem {
         this.score = score;
     }
 
-    public User getUser() {
+    public TestUser getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(TestUser user) {
         this.user = user;
     }
 }
