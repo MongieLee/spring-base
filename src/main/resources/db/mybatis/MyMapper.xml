@@ -10,6 +10,16 @@
                       on t.user_id = u.id
         order by sum_score desc;
     </select>
+    <select id="getUserById" resultType="base.entity.TestUser">
+        select *
+        from USER
+        where id = #{id};
+    </select>
+    <select id="getUserByName" resultType="base.entity.TestUser">
+        select *
+        from USER
+        where username = #{username};
+    </select>
     <resultMap id="fuck" type="base.entity.RankItem">
         <result property="score" column="sum_score"/>
         <association property="user" javaType="base.entity.User">

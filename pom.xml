@@ -60,6 +60,11 @@
             <version>1.18.22</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>3.4.0</version>
+        </dependency>
     </dependencies>
 
     <!-- 构建用 不用动 -->
@@ -76,7 +81,7 @@
                 <configuration>
                     <url>jdbc:mysql://localhost:3306/test</url>
                     <user>root</user>
-                    <password>12345678</password>
+                    <password>123456</password>
                 </configuration>
             </plugin>
         </plugins>
