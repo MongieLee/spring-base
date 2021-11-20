@@ -27,7 +27,7 @@ public class CacheAspect {
     public Object cache(ProceedingJoinPoint joinPoint) throws Throwable {
         Signature signature = joinPoint.getSignature();
         String methodName = signature.getName();
-        Object cachedValue = cache.get(methodName);
+        Object cachedValue = redisTemplate.opsForValue().get(methodName);
         if (cachedValue != null) {
             System.out.println("有缓存，旧的值");
             System.out.println(cachedValue);
@@ -36,7 +36,7 @@ public class CacheAspect {
             System.out.println("没有缓存，新的值");
 
             Object proceed = joinPoint.proceed();
-            Object realValue = cache.put(methodName, proceed);
+            redisTemplate.opsForValue().set(methodName, proceed);
             System.out.println(proceed);
             return proceed;
         }

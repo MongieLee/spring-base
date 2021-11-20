@@ -3,6 +3,7 @@ package base.service;
 import base.anno.Cache;
 import base.dao.RankDao;
 import base.dao.UserMapper;
+import base.entity.RItem;
 import base.entity.RankItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,12 +19,12 @@ public class RankService {
     }
 
     @Cache
-    public  List<RankItem> getRank() {
+    public List<RankItem> getRank() {
         return rankDao.getRank();
     }
 
     @Cache
-    public String getTest(){
-        return "sdjfkldsjf";
+    public RItem getTest() {
+        return new RItem("heihei", false);
     }
 }

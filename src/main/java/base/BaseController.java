@@ -34,6 +34,7 @@ public class BaseController {
     }
 
     @RequestMapping("/test")
+    @ResponseBody
     public Object test() {
         return rankService.getTest();
     }
