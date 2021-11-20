@@ -21,4 +21,9 @@ public class RankService {
     public  List<RankItem> getRank() {
         return rankDao.getRank();
     }
+
+    @Cache
+    public String getTest(){
+        return "sdjfkldsjf";
+    }
 }

@@ -33,6 +33,10 @@ public class BaseController {
         return new ModelAndView("index", model);
     }
 
+    @RequestMapping("/test")
+    public Object test() {
+        return rankService.getTest();
+    }
 
     @RequestMapping("/rankData")
     public Object r() {
